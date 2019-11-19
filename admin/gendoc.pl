@@ -172,20 +172,14 @@ sub print_header
 	print $g_filehandle "<head>\n";
 	print $g_filehandle "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" >\n";
 	print $g_filehandle "<title>$_[0]</title>\n";
-	print $g_filehandle "<style type=\"text/css\">\n";
-
-	if($g_css ne "")
-	{
-		open(INPUT, $g_css) or die "Error opening $g_css: $!";
-		while(<INPUT>)
-		{
-			chomp;
-			print $g_filehandle "$_ ";
-		}
-		close(INPUT);
-	}
-
-	print $g_filehandle "</style>\n";
+	
+	# altered by cabji 20191119 to simplify syntax hilighting
+	print $g_filehandle "<link rel=\"stylesheet\" href=\"kvirc_docs_styles.css\">\n";
+	print $g_filehandle "<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/styles/default.min.css\">\n";
+	print $g_filehandle "<script src=\"https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js\"></script>\n";
+	print $g_filehandle "<link rel=\"stylesheet\" href=\"https://highlightjs.org/static/demo/styles/night-owl.css\">\n";
+	print $g_filehandle "<script>hljs.initHighlightingOnLoad();</script>\n";
+	
 	print $g_filehandle "</head>\n";
 	print $g_filehandle "<body bgcolor=\"$g_bodybgcolor\" text=\"$g_bodytextcolor\">\n";
 
