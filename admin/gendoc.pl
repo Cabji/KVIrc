@@ -657,8 +657,8 @@ sub process_body_line
 	$_[0] =~ s/\[\/tr\]/\<\/tr\>/g;
 	$_[0] =~ s/\[td\]/\<td\>/g;
 	$_[0] =~ s/\[\/td\]/\<\/td\>/g;
-	$_[0] =~ s/\[example\][ 	\n]*/\<\/td\>\<\/tr\>\<tr\>\<td class=\"example-box\"\>/g;
-	$_[0] =~ s/\[\/example\]/\<\/td\>\<\/tr\>\<tr\>\<td bgcolor=\"$g_bodytablebgcolor\"\>/g;
+	$_[0] =~ s/\[example\][ 	\n]*/\<\/td\>\<\/tr\>\<tr\>\<td class=\"example-box\"\>\<pre\>\<code class=\"c\"\>/g;
+	$_[0] =~ s/\[\/example\]/\<\/code\>\<\/pre\>\<\/td\>\<\/tr\>\<tr\>\<td bgcolor=\"$g_bodytablebgcolor\"\>/g;
 	$_[0] =~ s/\[comment\]/<span class="comment-text">/g;
 	$_[0] =~ s/\[\/comment\]/<\/span>/g;
 
