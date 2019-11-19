@@ -27,7 +27,7 @@ a:hover {
 	color: #186CC4;
 }
 pre {
-	white-space: normal;
+	white-space: pre;
 }
 a:active {
 	text-decoration: underline;
