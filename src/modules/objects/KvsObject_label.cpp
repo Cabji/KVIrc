@@ -126,16 +126,16 @@ const int frame_cod[] = {
 		!fn: $setAlignment(<flag1:string>, <flag2:string>, ...)
 		This function sets alignment flags, given as parameters, for
 		this label. Valid flags are:
-		[pre]
-			Right     - Text is aligned to right border
-			Left      - Text is aligned to left border
-			Top       - Text is aligned to the top border
-			Bottom    - Text is aligned to the bottom border
-			HCenter   - Text is horizontally centered
-			VCenter   - Text is vertically centered
-			Center    - Equals HCenter + VCenter
+		[example]
+			Right     - Text is aligned to right border[br]
+			Left      - Text is aligned to left border[br]
+			Top       - Text is aligned to the top border[br]
+			Bottom    - Text is aligned to the bottom border[br]
+			HCenter   - Text is horizontally centered[br]
+			VCenter   - Text is vertically centered[br]
+			Center    - Equals HCenter + VCenter[br]
 			Justify   - Text is spaced apart to cover available room
-		[/pre]
+		[/example]
 		It is obvious that you can not set [i]Right[/i]
 		and [i]Left[/i] simultaneously - this will [b]not[/b]
 		result in an error message - it will simply not work :)
@@ -145,26 +145,26 @@ const int frame_cod[] = {
 		Returns a string containing this label's frame-style flags,
 		separated with commas. Output from this function could look like
 		this:
-		[pre]Panel, Raised[/pre]
+		[example]Panel, Raised[/example]
 		See [classfnc]$setFrameStyle[/classfnc]() for a list of all
 		frame-style flags and their explanation.
 		!fn: $setFrameStyle(<flag1>, <flag2>, ...)
 		Sets the frame-style flags to the ones passed as arguments.
 		The flags determine the shape or shadow of the
 		label's frame. Valid shape flags are:[br]
-		[pre]
-			NoFrame   - Draw no frame. You shouldn't specify a shadow when using this.
-			Box       - Draws a rectangular box. Its borders can be [i]Raised[/i] or [i]Sunken[/i]
-			Panel     - Draws a rectangular panel which can be [i]Raised[/i] or [i]Sunken[/i]
-			WinPanel  - Similar to [i]Panel[/i], but is more in Win95 style
+		[example]
+			NoFrame   - Draw no frame. You shouldn't specify a shadow when using this.[br]
+			Box       - Draws a rectangular box. Its borders can be [i]Raised[/i] or [i]Sunken[/i][br]
+			Panel     - Draws a rectangular panel which can be [i]Raised[/i] or [i]Sunken[/i][br]
+			WinPanel  - Similar to [i]Panel[/i], but is more in Win95 style[br]
 			Hline     - Draws a horizontal line that frames nothing (useful as separator)
-		[/pre]
+		[/example]
 		Valid shadow flags are:[br]
-		[pre]
-			Plain     - No 3D effect (draws using foreground color)
-			Raised    - Makes the label look like it was raised above the parent widget
+		[example]
+			Plain     - No 3D effect (draws using foreground color)[br]
+			Raised    - Makes the label look like it was raised above the parent widget[br]
 			Sunken    - Makes the label look like it was [i]pushed[/i] inside the parent widget
-		[/pre]
+		[/example]
 		!fn: $setImage(<image_id>)
 		Sets the image to be displayed on this label.
 		Giving empty argument clears the pixmap.[br]

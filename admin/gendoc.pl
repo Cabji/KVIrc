@@ -172,14 +172,14 @@ sub print_header
 	print $g_filehandle "<head>\n";
 	print $g_filehandle "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" >\n";
 	print $g_filehandle "<title>$_[0]</title>\n";
-	
+
 	# altered by cabji 20191119 to simplify syntax hilighting
 	print $g_filehandle "<link rel=\"stylesheet\" href=\"kvirc_docs_styles.css\">\n";
-	print $g_filehandle "<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/styles/default.min.css\">\n";
-	print $g_filehandle "<script src=\"https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js\"></script>\n";
-	print $g_filehandle "<link rel=\"stylesheet\" href=\"https://highlightjs.org/static/demo/styles/night-owl.css\">\n";
+	print $g_filehandle "<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/gh/highlightjs/cdn-release\@9.16.2/build/styles/default.min.css\">\n";
+	print $g_filehandle "<script src=\"https://cdn.jsdelivr.net/gh/highlightjs/cdn-release\@9.16.2/build/highlight.min.js\"></script>\n";
+	print $g_filehandle "<link rel=\"stylesheet\" href=\"https://highlightjs.org/static/demo/styles/rainbow.css\">\n";
 	print $g_filehandle "<script>hljs.initHighlightingOnLoad();</script>\n";
-	
+
 	print $g_filehandle "</head>\n";
 	print $g_filehandle "<body bgcolor=\"$g_bodybgcolor\" text=\"$g_bodytextcolor\">\n";
 
@@ -606,6 +606,7 @@ sub process_body_line
 	$_[0] =~ s/\</\&lt\;/g;
 	$_[0] =~ s/\>/\&gt\;/g;
 
+=pod commented by cabji 20191202 - this is not required since we use highlightjs.org for syntax highlighting
 	if($bInExample)
 	{
 		# Additional processing for examples
@@ -623,6 +624,7 @@ sub process_body_line
 		}
 		$_[0] =~ s/\n+/<br>\n/gs;
 	}
+=cut
 
 	$_[0] =~ s/^				/\&nbsp\;\&nbsp\;\&nbsp\;\&nbsp\;\&nbsp\;\&nbsp\;\&nbsp\;\&nbsp\;\&nbsp\;\&nbsp\;\&nbsp\;\&nbsp\;\&nbsp\;\&nbsp\;\&nbsp\;\&nbsp\;/g;
 	$_[0] =~ s/^			/\&nbsp\;\&nbsp\;\&nbsp\;\&nbsp\;\&nbsp\;\&nbsp\;\&nbsp\;\&nbsp\;\&nbsp\;\&nbsp\;\&nbsp\;\&nbsp\;/g;
@@ -996,7 +998,9 @@ sub process_file
 							$tmp = $_;
 							$tmp =~ s/\(.*\)//g;
 							$tmp =~ s/\$//g;
-							print DOCFILE "<tr bgcolor=\"$g_classfnctablecolor\"><td><code><b><font color=\"$g_examplecolor\"><a name=\"$tmp\">$_</a></font></b></code></td></tr>\n";
+# commented by cabji 20191202
+#							print DOCFILE "<tr bgcolor=\"$g_classfnctablecolor\"><td><code><b><font color=\"$g_examplecolor\"><a name=\"$tmp\">$_</a></font></b></code></td></tr>\n";
+							print DOCFILE $_;
 						} else {
 							if($fncbody ne "")
 							{
@@ -1042,7 +1046,9 @@ sub process_file
 							$tmp = $_;
 							$tmp =~ s/\(.*\)//g;
 							$tmp =~ s/\$//g;
-							print DOCFILE "<tr bgcolor=\"$g_classfnctablecolor\"><td><code><b><font color=\"$g_examplecolor\"><a name=\"$tmp\">$_</a></font></b></code></td></tr>\n";
+# commented by cabji 20191202
+#							print DOCFILE "<tr bgcolor=\"$g_classfnctablecolor\"><td><code><b><font color=\"$g_examplecolor\"><a name=\"$tmp\">$_</a></font></b></code></td></tr>\n";
+							print DOCFILE $_;
 						} else {
 							if($sigbody ne "")
 							{
