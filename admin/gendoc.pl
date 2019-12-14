@@ -998,9 +998,7 @@ sub process_file
 							$tmp = $_;
 							$tmp =~ s/\(.*\)//g;
 							$tmp =~ s/\$//g;
-# commented by cabji 20191202
-#							print DOCFILE "<tr bgcolor=\"$g_classfnctablecolor\"><td><code><b><font color=\"$g_examplecolor\"><a name=\"$tmp\">$_</a></font></b></code></td></tr>\n";
-							print DOCFILE $_;
+							print DOCFILE "<tr bgcolor=\"$g_classfnctablecolor\"><td><code><b><font color=\"$g_examplecolor\"><a name=\"$tmp\">$_</a></font></b></code></td></tr>\n";
 						} else {
 							if($fncbody ne "")
 							{
