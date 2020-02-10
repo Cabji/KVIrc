@@ -446,7 +446,8 @@ static bool config_kvs_fnc_sectionlist(KviKvsModuleFunctionCall * c)
 		$config.keylist(<id>)
 	@description:
 		Returns an array of keys present in the current section of the config file identified by <id>.[br]
-		<id> must be a valid config identifier returned by [fnc]$config.open[/fnc]()
+		<id> must be a valid config identifier returned by [fnc]$config.open[/fnc]() and the desired section [br]
+		must be selected by using [fnc]config.setsection[/fnc]
 	@seealso:
 		[module:config]Config module documentation[/module]
 */
